@@ -1,10 +1,9 @@
 //////////////////////////////////////////////////////
 // Módulos
-const {BigQuery} = require('@google-cloud/bigquery');
-const express    = require("express");
-const request    = require("request-promise-native");
-const validador  = require("./lib/validador.js");
-
+const express   = require("express");
+const request   = require("request-promise-native");
+const validador = require("./lib/validador.js");
+const src_root  = "./htdocs";
 const _debug    = true;
 const MATCH_URI = "";
 
@@ -66,11 +65,6 @@ async function fazMatch(req, res)
     res.end();
 }
 
-async function queryDataBase()
-{
-    
-}
-
 async function chamaMatchAPI(dados)
 {
     let resultado_match = {};
@@ -122,6 +116,7 @@ router.get("/fazMatch", fazMatch);
 //pilha de middlewares
 app.use(express.json(json_op));
 app.use(router);
+app.use(express.static(src_root));
 app.use(naoEncontrado);
 
 //espera
