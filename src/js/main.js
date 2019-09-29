@@ -30,7 +30,7 @@ function getDataFromForm(){
 }
 
 function getResponse(json){
-	$.getJSON('teste.json', json,function(response){
+	$.getJSON('/fazMatch', json,function(response){
 		setResults(response)
 	}).fail(function( jqxhr) {
 		var request = jqxhr.responseText;
@@ -39,23 +39,33 @@ function getResponse(json){
 }
 
 function setResults(response){
-	$("#respostaNome").html(response.nome);
-	$("#respostaCategoria").html(response.categoria);
-	$("#respostaCor").html(response.cor);
-	$("#respostaSabor").html(response.sabor);
-	$("#respostaEanLsbn").html(response.eanLSBN);
-	$("#respostaDepartamento").html(response.departamento);
-	$("#respostaTipoProduto").html(response.tipoProduto);
-	$("#respostaTamanho").html(response.tamanho);
-	$("#respostaPrecoPor").html(response.precoPor);
-	$("#respostaSubCatN4").html(response.subCatN4)
+	if (response.nome)
+		$("#respostaNome").html(response.nome);
+	if (response.categoria)
+		$("#respostaCategoria").html(response.categoria);
+	if (response.response.cor)
+		$("#respostaCor").html(response.cor);
+	if (response.sabor)
+		$("#respostaSabor").html(response.sabor);
+	if (response.eanLSBN)
+		$("#respostaEanLsbn").html(response.eanLSBN);
+	if (response.departamento)
+		$("#respostaDepartamento").html(response.departamento);
+	if (response.tipoProduto)
+		$("#respostaTipoProduto").html(response.tipoProduto);
+	if (response.tamanho)
+		$("#respostaTamanho").html(response.tamanho);
+	if (response.precoPor)
+		$("#respostaPrecoPor").html(response.precoPor);
+	if (response.subCatN4)
+		$("#respostaSubCatN4").html(response.subCatN4)
 	;
-	$("#respostaDescricao").html(response.descricao);
+	if (response.descricao)
+		$("#respostaDescricao").html(response.descricao);
 }
 
 
 $("#btnCadastrar").click(function(){
-	console.log('btn')
 	var json = getDataFromForm();
 	getResponse(json);
 });
