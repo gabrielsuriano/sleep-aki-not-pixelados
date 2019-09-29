@@ -4,6 +4,7 @@
   "description": "Backend da demonstração de solução",
   "main": "entry.js",
   "scripts": {
+    "start": "node entry.js",
     "test": "node entry.js",
     "front": "node frontTeste.js"
   },

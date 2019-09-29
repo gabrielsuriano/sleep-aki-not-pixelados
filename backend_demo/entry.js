@@ -67,7 +67,7 @@ async function fazMatch(req, res)
 
 async function chamaMatchAPI(dados)
 {
-    let resultado_match = "";
+    let resultado_match = {};
 
     let query = "?";
     let keys  = Object.keys(dados);
@@ -79,23 +79,29 @@ async function chamaMatchAPI(dados)
     if(_debug)
     {
         console.log(query);
-        resultado_match      = {};
-        resultado_match.message = "hello";
-        resultado_match.query  = query;
+        for(let i = 0; i < keys.length; i++)
+        {
+            resultado_match[keys[i]] = dados[keys[i]];
+        }
+
+        return resultado_match;
     }
 
-    /*
     try
     {
-        //resultado_match = 
+        resultado_match = request
+        ({ 
+            method: 'GET', 
+            uri: MATCH_URI + "/" + query,
+            resolveWithFullResponse: true  
+        });
     }
     catch(err)
     {
-
+        throw err;
     }
-    */
 
-    return resultado_match;
+    //return resultado_match;
 }
 
 //////////////////////////////////////////////////////
