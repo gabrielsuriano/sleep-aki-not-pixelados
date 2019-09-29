@@ -1,0 +1,25 @@
+{
+  "name": "demoback",
+  "version": "1.0.0",
+  "description": "Backend da demonstração de solução",
+  "main": "entry.js",
+  "scripts": {
+    "test": "node entry.js",
+    "front": "node frontTeste.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gabrielsuriano/sleep-aki-not-pixelados.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielsuriano/sleep-aki-not-pixelados/issues"
+  },
+  "homepage": "https://github.com/gabrielsuriano/sleep-aki-not-pixelados#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  }
+}
