@@ -1,8 +1,9 @@
 //////////////////////////////////////////////////////
 // Módulos
-let express   = require("express");
-let request   = require("request-promise-native");
-let validador = require("./lib/validador.js");
+const {BigQuery} = require('@google-cloud/bigquery');
+const express    = require("express");
+const request    = require("request-promise-native");
+const validador  = require("./lib/validador.js");
 
 const _debug    = true;
 const MATCH_URI = "";
@@ -65,6 +66,11 @@ async function fazMatch(req, res)
     res.end();
 }
 
+async function queryDataBase()
+{
+    
+}
+
 async function chamaMatchAPI(dados)
 {
     let resultado_match = {};
@@ -89,7 +95,7 @@ async function chamaMatchAPI(dados)
 
     try
     {
-        resultado_match = request
+        resultado_match = await request
         ({ 
             method: 'GET', 
             uri: MATCH_URI + "/" + query,
@@ -101,7 +107,7 @@ async function chamaMatchAPI(dados)
         throw err;
     }
 
-    //return resultado_match;
+    return resultado_match;
 }
 
 //////////////////////////////////////////////////////
