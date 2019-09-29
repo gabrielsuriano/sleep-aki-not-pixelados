@@ -15,7 +15,7 @@ const HTTP_SERR = 500;
 
 //////////////////////////////////////////////////////
 // Setup do server
-let port = 8001;
+let port = process.env.PORT || 8001;
 app = new express();
 
 let json_op  = {};
