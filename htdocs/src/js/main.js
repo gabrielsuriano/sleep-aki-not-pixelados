@@ -11,6 +11,13 @@ function getDataFromForm(){
 	var precoPor = $("#txtPrecoPor").val();
 	var subCatN4 = $("#txtSubCatN4").val();
 	var descricao = $("#txtDescricao").val();
+	var peso = $("#txtPeso").val();
+	var marca = $("#txtMarca").val();
+	var altura = $("#txtAltura").val();
+	var largura = $("#txtLargura").val();
+	var profundidade = $("#txtProfundidade").val();
+	var valorGenero = $("#txtValorGenero").val();
+	var nomeGenero = $("#txtNomeGenero").val();
 
 	var json = {
 		"nome": nome,
@@ -23,6 +30,13 @@ function getDataFromForm(){
 		"tamanho": tamanho,
 		"precoDe": precoDe,
 		"precoPor": precoPor,
+		"peso": peso,
+		"marca": marca,
+		"altura": altura,
+		"largura": largura,
+		"profundidade": profundidade,
+		"valorGenero": valorGenero,
+		"nomeGenero": nomeGenero,
 		"subCatN4": subCatN4,
 		"descricao": descricao
 	}
@@ -55,8 +69,24 @@ function setResults(response){
 		$("#respostaTipoProduto").html(response.tipoProduto);
 	if (response.tamanho)
 		$("#respostaTamanho").html(response.tamanho);
+	if (response.precoDe)
+		$("#respostaPrecoDe").html(response.precoPor);
 	if (response.precoPor)
 		$("#respostaPrecoPor").html(response.precoPor);
+	if (response.peso)
+		$("#respostaPeso").html(response.peso);
+	if (response.marca)
+		$("#respostaMarca").html(response.marca);
+	if (response.altura)
+		$("#respostaAltura").html(response.altura);
+	if (response.largura)
+		$("#respostaLargura").html(response.largura);
+	if (response.profundidade)
+		$("#respostaProfundidade").html(response.profundidade);
+	if (response.valorGenero)
+		$("#respostaValorGenero").html(response.valorGenero);
+	if (response.nomeGenero)
+		$("#respostaNomeGenero").html(response.nomeGenero);
 	if (response.subCatN4)
 		$("#respostaSubCatN4").html(response.subCatN4)
 	;
