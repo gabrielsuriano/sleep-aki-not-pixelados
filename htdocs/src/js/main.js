@@ -43,7 +43,7 @@ function setResults(response){
 		$("#respostaNome").html(response.nome);
 	if (response.categoria)
 		$("#respostaCategoria").html(response.categoria);
-	if (response.response.cor)
+	if (response.cor)
 		$("#respostaCor").html(response.cor);
 	if (response.sabor)
 		$("#respostaSabor").html(response.sabor);
