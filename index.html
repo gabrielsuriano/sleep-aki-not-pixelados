@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Cadastrar pedido</title>
+</head>
+
+<style type="text/css">
+main, body{
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS",Arial,sans-serif;
+}
+.flex{
+	display: flex;
+}
+.flex-col{
+	flex-direction: column;
+}
+.main{
+	width: 1000px;
+	margin: auto;
+}
+.field{
+	width: 1000px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.flex-row .field{
+	width: 490px;
+}
+.flex-row .field:first-child{
+	padding-right: 20px;
+}
+.field input{
+	font-size: 0.875rem;
+	height: 0.875rem;
+	padding: 10px;
+}
+.header{
+	height: 76px;
+	background-color: #5a2d82;
+}
+.logo{
+	width: 1000px;
+	margin: auto;
+}
+.logo-img{
+	display: flex;
+	align-items: center;
+	width: 160px;
+	height: 76px;
+}
+.title{
+	padding: 0.8rem 0;
+}
+.title-content{
+	font-size: 2.0rem;
+}
+</style>
+<body>
+	<div class="header">
+		<div class="logo">
+			<div class="logo-img">
+				<img src="//static.netshoes.com.br/0.0.387.11/netshoesbr/images/logo.png">
+			</span>
+		</div>		
+	</div>
+	<div class="main">
+		<div class="title">
+			<span class="title-content">Cadastre um novo SKU</span>
+		</div>
+		<div id="cadastroSku">
+			<form>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Nome: </label>
+					<input type="text" id="txtNome">
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Categoria: </label>
+					<input type="text" id="txtCategoria">
+				</div>
+				<div class="flex flex-row">
+					<div class="field flex flex-col inputText">
+						<label for="txtNome">Cor: </label>
+						<input type="text" id="txtCor">
+					</div>
+					<div class="field flex flex-col inputText">
+						<label for="txtNome">Sabor: </label>
+						<input type="text" id="txtSabor">
+					</div>
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Ean LSBN: </label>
+					<input type="text" id="txtEanLsbn">
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Departamento: </label>
+					<input type="text" id="txtDepartamento">
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Tipo Produto: </label>
+					<input type="text" id="txtTipoProduto">
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Tamanho: </label>
+					<input type="text" id="txtTamanho">
+				</div>
+				<div class="flex flex-row">
+					<div class="field flex flex-col inputText">
+						<label for="txtNome">Preço de: </label>
+						<input type="text" id="txtPrecoDe">
+					</div>
+					<div class="field flex flex-col inputText">
+						<label for="txtNome">Preço por: </label>
+						<input type="text" id="txtPrecoPor">
+					</div>
+				</div>
+				<div class="field flex flex-col inputText">
+					<label for="txtNome">Categoria N4: </label>
+					<input type="text" id="txtSubCatN4">
+				</div>
+				<div class="field flex flex-col inputTextArea">
+					<label for="txtNome">Descrição: </label>
+					<textarea id="txtDescricao"></textarea>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
