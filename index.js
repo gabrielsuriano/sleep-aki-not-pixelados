@@ -4,8 +4,8 @@ const express   = require("express");
 const request   = require("request-promise-native");
 const validador = require("./lib/validador.js");
 const src_root  = "./htdocs";
-const _debug    = true;
-const MATCH_URI = "";
+const _debug    = false;
+const MATCH_URI = "http://127.0.0.1:8002/matchData";
 
 const HTTP_OK   = 200;
 const HTTP_NOTF = 404;
@@ -50,18 +50,19 @@ async function fazMatch(req, res)
     }
     catch(err)
     {
-        if(_debug)
-            console.log(err);
+
+        console.log(err);
 
         let err_response = {};
         
         res.status(HTTP_SERR);
-        res.send(err_response);
+        res.send("Internal Server Error - GG");
         res.end();
+        return;
     }
 
     res.status(HTTP_OK);
-    res.json(resultado_match);
+    res.send(JSON.parse(resultado_match.body));
     res.end();
 }
 
@@ -89,10 +90,11 @@ async function chamaMatchAPI(dados)
 
     try
     {
+        let uri = MATCH_URI + "/" + query
         resultado_match = await request
         ({ 
             method: 'GET', 
-            uri: MATCH_URI + "/" + query,
+            uri: uri,
             resolveWithFullResponse: true  
         });
     }

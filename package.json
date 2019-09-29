@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "node index.js",
-    "front": "node frontTeste.js"
+    "front": "node frontTeste.js",
+    "match": "node matchTeste.js"
   },
   "repository": {
     "type": "git",
