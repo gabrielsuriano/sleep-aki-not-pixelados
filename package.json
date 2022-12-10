@@ -21,7 +21,7 @@
   "homepage": "https://github.com/gabrielsuriano/sleep-aki-not-pixelados#readme",
   "dependencies": {
     "@google-cloud/bigquery": "^4.2.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.7"
   }
